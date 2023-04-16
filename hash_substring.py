@@ -8,7 +8,7 @@ def read_input():
         pattern=input().rstrip()
         text=input().rstrip()
     elif input_IF[0]=="F":
-        tests = "tests/06" 
+        tests = "/tests/06" 
             with open(filename, 'r') as f:
                 pattern=f.readline().rstrip()
                 text=f.readline().rstrip()
