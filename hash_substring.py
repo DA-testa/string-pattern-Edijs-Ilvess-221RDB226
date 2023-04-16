@@ -8,13 +8,13 @@ def read_input():
         pattern=input().rstrip()
         text=input().rstrip()
     elif input_IF[0]=="F":
-        tests = "/tests/06" 
+        tests = "./tests/06" 
         with open(tests, 'r') as f:
             pattern=f.readline().rstrip()
             text=f.readline().rstrip()
     else:
         print("I/F error")
-    return pattern,text
+    return pattern, text
     
     # after input type choice
     # read two lines 
@@ -49,7 +49,6 @@ def get_occurrences(pattern, text):
                 occ.append(i)
         if i<(text_length-pattern_length):
             text_hash=(2*(text_hash-ord(text[i])*2**(pattern_length-1))+ord(text[i+pattern_length]))
-
 
 
     # and return an iterable variable
