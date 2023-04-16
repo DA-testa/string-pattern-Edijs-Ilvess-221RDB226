@@ -9,9 +9,9 @@ def read_input():
         text=input().rstrip()
     elif input_IF[0]=="F":
         tests = "/tests/06" 
-            with open(filename, 'r') as f:
-                pattern=f.readline().rstrip()
-                text=f.readline().rstrip()
+        with open(tests, 'r') as f:
+            pattern=f.readline().rstrip()
+            text=f.readline().rstrip()
     else:
         print("I/F error")
     return pattern,text
