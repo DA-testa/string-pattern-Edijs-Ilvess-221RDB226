@@ -42,6 +42,8 @@ def get_occurrences(pattern, text):
                 occ.append(i)
         if i<(text_length-pattern_length):
             text_hash=((text_hash-ord(text[i])*2**(pattern_length-1))*2+ord(text[i+pattern_length]))%(2**64)
+            if text_hash<0:
+                text_hash+=2**64
 
 
     # and return an iterable variable
