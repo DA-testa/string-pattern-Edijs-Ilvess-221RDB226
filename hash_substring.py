@@ -5,13 +5,13 @@ def read_input():
     # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
     input_IF=input()
     if input_IF[0]=="I":
-        pattern=input()
-        text=input()
+        pattern=input().rstrip()
+        text=input().rstrip()
     elif input_IF[0]=="F":
-        filename = "tests/06" 
+        tests = "tests/06" 
             with open(filename, 'r') as f:
-                pattern=f.readline().strip()
-                text=f.readline().strip()
+                pattern=f.readline().rstrip()
+                text=f.readline().rstrip()
     else:
         print("I/F error")
     return pattern,text
