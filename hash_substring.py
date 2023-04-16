@@ -54,7 +54,7 @@ def get_occurrences(pattern, text):
 
 
     # and return an iterable variable
-    return [0]
+    return occ
 
 
 # this part launches the functions
