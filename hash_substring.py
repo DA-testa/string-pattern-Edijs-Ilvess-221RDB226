@@ -31,8 +31,11 @@ def get_occurrences(pattern, text):
     # this function should find the occurances using Rabin Karp alghoritm 
     pattern_length=len(pattern) 
     text_length=len(text)
-    pattern_hash=sum(ord(pattern[i])*pow(256,pattern_length-i-1,101) for i in range(pattern_length))%101
-    text_hash = sum(ord(text[i])*pow(256,pattern_length-i-1,101) for i in range(pattern_length))%101
+    for i in range(pattern_length):
+        pattern_hash+=ord(pattern[i]*pow(256,pattern_length-i-1)
+        text_hash+=ord(text[i]*pow(256,pattern_length-i-1)
+    pattern_hash%=101
+    text_hash%=101
     occ = []
     for i in range(text_length-pattern_length+1):
         if pattern_hash==text_hash:
