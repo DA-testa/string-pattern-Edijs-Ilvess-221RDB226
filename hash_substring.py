@@ -34,19 +34,14 @@ def get_occurrences(pattern, text):
     text_length=len(text)
     text_hash=0
     for i in range(pattern_length):
-        text_hash=text_hash*2 + ord(text[i])
+        text_hash=(text_hash*2+ord(text[i]))%(2**64)
     occ = []
     for i in range(text_length-pattern_length+1):
         if text_hash==pattern_hash:
-            check=True
-            for j in range(pattern_length):
-                if text[i+j]!=pattern[j]:
-                    check=False
-                    break
-            if check==True:
+            if text[i:i+pattern_length] == pattern:
                 occ.append(i)
         if i<(text_length-pattern_length):
-            text_hash=(2*(text_hash-ord(text[i])*2**(pattern_length-1))+ord(text[i+pattern_length]))
+            text_hash=((text_hash-ord(text[i])*2**(pattern_length-1))*2+ord(text[i+pattern_length]))%(2**64)
 
 
     # and return an iterable variable
@@ -55,7 +50,5 @@ def get_occurrences(pattern, text):
 
 # this part launches the functions
 if __name__ == '__main__':
-    pattern, text=read_input()
-    occurrences=get_occurrences(pattern, text)
-    print_occurrences(occurrences)
+    print_occurrences(get_occurrences(*read_input()))
 
