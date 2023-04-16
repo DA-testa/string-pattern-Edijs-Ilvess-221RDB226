@@ -7,14 +7,12 @@ def read_input():
     if input_IF[0]=="I":
         pattern=input().rstrip()
         text=input().rstrip()
+        return (pattern, text)
     elif input_IF[0]=="F":
-        tests = "./tests/06" 
-        with open(tests, 'r') as f:
+        with open("tests/06", 'r') as f:
             pattern=f.readline().rstrip()
             text=f.readline().rstrip()
-    else:
-        print("I/F error")
-    return pattern, text
+            return (pattern, text)
     
     # after input type choice
     # read two lines 
@@ -57,7 +55,6 @@ def get_occurrences(pattern, text):
 
 # this part launches the functions
 if __name__ == '__main__':
-    pattern, text = read_input()
     print_occurrences(get_occurrences(*read_input()))
 
 
