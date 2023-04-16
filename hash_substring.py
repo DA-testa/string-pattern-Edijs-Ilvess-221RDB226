@@ -8,9 +8,8 @@ def read_input():
         pattern=input()
         text=input()
     elif input_IF[0]=="F":
-        tests=input()
-        if 'a' not in tests:
-            with open("tests/"+tests) as f:
+        filename = "tests/06" 
+            with open(filename, 'r') as f:
                 pattern=f.readline().strip()
                 text=f.readline().strip()
     else:
