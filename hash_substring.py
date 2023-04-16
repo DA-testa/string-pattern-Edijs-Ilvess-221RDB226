@@ -39,7 +39,7 @@ def get_occurrences(pattern, text):
     for i in range(pattern_length):
         text_hash=text_hash*2 + ord(text[i])
     occ = []
-    for i in range(text_length-pattern_length):
+    for i in range(text_length-pattern_length+1):
         if text_hash==pattern_hash:
             check=True
             for j in range(pattern_length):
