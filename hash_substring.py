@@ -32,8 +32,8 @@ def get_occurrences(pattern, text):
     pattern_length=len(pattern) 
     text_length=len(text)
     for i in range(pattern_length):
-        pattern_hash+=ord(pattern[i]*pow(256,pattern_length-i-1)
-        text_hash+=ord(text[i]*pow(256,pattern_length-i-1)
+        pattern_hash+=ord(pattern[i])*pow(256,pattern_length-i-1)
+        text_hash+=ord(text[i])*pow(256,pattern_length-i-1)
     pattern_hash%=101
     text_hash%=101
     occ = []
